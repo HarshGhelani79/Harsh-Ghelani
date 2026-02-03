@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harsh Ghelani | Electronics & Communication Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Header Section */
+    header {
+      background: white;
+      border-radius: 20px;
+      padding: 50px 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    h1 {
+      font-size: 2.5em;
+      color: #2d3748;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    
+    .subtitle {
+      font-size: 1.2em;
+      color: #667eea;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #4a5568;
+      font-size: 0.95em;
+    }
+    
+    .contact-item a {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .contact-item a:hover {
+      color: #764ba2;
+    }
+    
+    /* Card Sections */
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 35px 40px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    }
+    
+    h2 {
+      color: #2d3748;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    h2::before {
+      content: '';
+      width: 4px;
+      height: 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+    }
+    
+    /* Summary */
+    .summary-text {
+      font-size: 1.05em;
+      color: #4a5568;
+      line-height: 1.8;
+    }
+    
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    
+    .skill-item {
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      padding: 15px 20px;
+      border-radius: 12px;
+      border-left: 4px solid #667eea;
+      transition: all 0.3s;
+    }
+    
+    .skill-item:hover {
+      border-left-color: #764ba2;
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+    }
+    
+    /* Education Timeline */
+    .education-item {
+      padding: 20px;
+      border-left: 3px solid #667eea;
+      margin-left: 20px;
+      margin-bottom: 25px;
+      position: relative;
+      background: #f7fafc;
+      border-radius: 0 12px 12px 0;
+    }
+    
+    .education-item::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 20px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #667eea;
+      border: 3px solid white;
+    }
+    
+    .education-item strong {
+      color: #2d3748;
+      font-size: 1.1em;
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .education-details {
+      color: #4a5568;
+      margin: 5px 0;
+    }
+    
+    /* Certifications & Internships */
+    .cert-item, .internship-item {
+      background: #f7fafc;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      border-left: 4px solid #48bb78;
+    }
+    
+    .internship-item {
+      border-left-color: #ed8936;
+    }
+    
+    .cert-item strong, .internship-item strong {
+      color: #2d3748;
+      font-size: 1.1em;
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .internship-item ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    
+    .internship-item li {
+      color: #4a5568;
+      margin: 5px 0;
+    }
+    
+    /* Projects */
+    .project-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    
+    .project-card strong {
+      font-size: 1.2em;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    /* Languages Table */
+    .languages-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    
+    .languages-table th {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px;
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    .languages-table td {
+      padding: 15px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .languages-table tr:hover {
+      background: #f7fafc;
+    }
+    
+    /* Interests & Hobbies */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    
+    .tag {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 0.95em;
+      transition: transform 0.3s;
+    }
+    
+    .tag:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: white;
+      font-size: 0.9em;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      
+      h1 {
+        font-size: 2em;
+      }
+      
+      .card {
+        padding: 25px 20px;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <header>
+    <div class="profile-img">HG</div>
+    <h1>Harsh Ghelani</h1>
+    <p class="subtitle">Electronics & Communication Engineering Student</p>
+    <div class="contact-info">
+      <div class="contact-item">
+        📧 <a href="mailto:harshghelani79@gmail.com">harshghelani79@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        📞 7778087979
+      </div>
+      <div class="contact-item">
+        📍 Bhavnagar, Gujarat, India
+      </div>
+      <div class="contact-item">
+        🌐 <a href="https://www.linkedin.com/in/harsh-ghelani-ba6554368" target="_blank">LinkedIn Profile</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Summary -->
+  <div class="card">
+    <h2>Summary</h2>
+    <p class="summary-text">Enthusiastic Electronics & Communication Engineering student with a strong foundation in embedded systems and firmware development. Skilled in microcontrollers (Arduino, Raspberry Pi, ESP32), sensor interfacing, and automation. Passionate about IoT and renewable energy applications.</p>
+  </div>
+
+  <!-- Skills -->
+  <div class="card">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item">Embedded C Programming (Basic)</div>
+      <div class="skill-item">Embedded Systems</div>
+      <div class="skill-item">Communication Protocols</div>
+      <div class="skill-item">Wireless Communication & Technologies</div>
+      <div class="skill-item">Sensor Integration</div>
+      <div class="skill-item">Multitasking Abilities</div>
+      <div class="skill-item">Python Programming (Basic)</div>
+      <div class="skill-item">Data Analytics</div>
+      <div class="skill-item">Effective Communication</div>
+      <div class="skill-item">Team Collaboration</div>
+      <div class="skill-item">User Research</div>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="card">
+    <h2>Education</h2>
+    <div class="education-item">
+      <strong>Bachelor's in Electronics & Communication Engineering</strong>
+      <div class="education-details">Government Engineering College, Bhavnagar</div>
+      <div class="education-details">Expected: August 2026 | CGPA: 7.41, CPI: 6.69</div>
+    </div>
+    <div class="education-item">
+      <strong>HSC</strong>
+      <div class="education-details">St. Xevier's Higher Secondary School, Bhavnagar</div>
+      <div class="education-details">May 2022 | Percentage: 50.30%</div>
+    </div>
+    <div class="education-item">
+      <strong>SSC</strong>
+      <div class="education-details">Shree Swaminarayan Vidhyalay, Bhavnagar</div>
+      <div class="education-details">May 2020 | Percentage: 72.50%</div>
+    </div>
+  </div>
+
+  <!-- Certifications -->
+  <div class="card">
+    <h2>Certifications</h2>
+    <div class="cert-item">
+      <strong>Intel AI for Manufacturing</strong>
+    </div>
+    <div class="cert-item">
+      <strong>IBM SkillsBuild – Data Analytics</strong>
+    </div>
+  </div>
+
+  <!-- Internships -->
+  <div class="card">
+    <h2>Internships</h2>
+    <div class="internship-item">
+      <strong>IBM SkillsBuild – Intern (Feb 2025 – Jul 2025)</strong>
+      <ul>
+        <li>Completed 15-day internship under GTU Skill-Based Training Program</li>
+        <li>Worked on tourism data analysis using Tableau and Excel</li>
+        <li>Aligned project with Sustainable Development Goals</li>
+      </ul>
+    </div>
+    <div class="internship-item">
+      <strong>Intel – Intern (Feb 2025 – Jul 2025)</strong>
+      <ul>
+        <li>Completed 15-day internship with Intel and GTU</li>
+        <li>Applied AI techniques in manufacturing and automation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="card">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <strong>Arduino-based Door Lock System</strong>
+      <p>Built a secure RFID-based door lock system using Arduino. Unlocks with authorized RFID cards.</p>
+    </div>
+  </div>
+
+  <!-- Languages -->
+  <div class="card">
+    <h2>Languages</h2>
+    <table class="languages-table">
+      <tr>
+        <th>Language</th>
+        <th>Proficiency</th>
+      </tr>
+      <tr>
+        <td>English</td>
+        <td>Intermediate (B1)</td>
+      </tr>
+      <tr>
+        <td>Hindi</td>
+        <td>Intermediate (B1)</td>
+      </tr>
+      <tr>
+        <td>Gujarati</td>
+        <td>Native</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Areas of Interest -->
+  <div class="card">
+    <h2>Areas of Interest</h2>
+    <div class="tags">
+      <div class="tag">Learning New Technologies</div>
+      <div class="tag">Technical Projects</div>
+      <div class="tag">Communication</div>
+      <div class="tag">Knowledge Sharing</div>
+    </div>
+  </div>
+
+  <!-- Hobbies -->
+  <div class="card">
+    <h2>Hobbies</h2>
+    <div class="tags">
+      <div class="tag">🎮 Gaming</div>
+      <div class="tag">🎵 Listening to Music</div>
+      <div class="tag">✈️ Traveling</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Harsh Ghelani | Built with passion for technology</p>
+  </footer>
+</div>
+
+</body>
+</html>
